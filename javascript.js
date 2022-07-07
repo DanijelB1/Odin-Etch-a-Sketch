@@ -10,3 +10,14 @@ function gridCreate(squaresNumber) {
 }
 
 gridCreate(16);
+
+const squareDiv = document.querySelectorAll('.square');
+
+squareDiv.forEach((div) => {                            
+    div.addEventListener('mouseover', (e) => {
+        e.target.style.background = 'blue'
+    })
+})
+
+
+
