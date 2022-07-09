@@ -14,10 +14,15 @@ gridCreate(16);
 const squareDiv = document.querySelectorAll('.square');
 
 squareDiv.forEach((div) => {                            
-    div.addEventListener('mouseover', (e) => {
-        e.target.style.background = 'blue'
+    div.addEventListener('mouseover',  (e) => {
+        if (e.buttons != 1) return; //  stops function if 'mouse 1' (left button) is not clicked                        
+        div.style.background = 'blue';
     })
+   
+    div.addEventListener('mousedown',  (e) => {   
+        e.preventDefault(); // prevents dragging on mousedown
+        div.style.background = 'blue';
+    })   
 })
-
 
 
