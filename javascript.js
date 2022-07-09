@@ -5,9 +5,10 @@ function gridCreate(squaresNumber) {
         const newDiv = document.createElement('div');
         container.appendChild(newDiv);
         newDiv.classList.add('square');
-        console.log('a')
     }
-}
+    container.style.gridTemplateRows = 'repeat' + '(' + `${squaresNumber}` + ',' +  '1fr'+ ')';
+    container.style.gridTemplateColumns = 'repeat' + '(' + `${squaresNumber}` + ',' +  '1fr'+ ')';
+  }
 
 gridCreate(16);
 
