@@ -11,6 +11,12 @@ function update() {
 }
 
 slider.addEventListener('input', update);
+// create a grid with selected slider value when mouse lifts off and reset square colour
+slider.addEventListener('change', () => {
+    colourRemove();
+    gridCreate(slider.value);
+})
+update()
 function gridCreate(squaresNumber) {
     for (let i = 0; i < Math.pow(squaresNumber,2); i++) {
         const newDiv = document.createElement('div');
