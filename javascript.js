@@ -29,7 +29,21 @@ function gridCreate(squaresNumber) {
 
 gridCreate(16);
 
+// change colour of square to black when left mouse is held down and dragged
+function colour() {
 const squareDiv = document.querySelectorAll('.square');
+    squareDiv.forEach((div) => {                            
+        div.addEventListener('mouseover',  (e) => {
+            if (e.buttons != 1) return; //  stop function if 'mouse 1' (left button) is not clicked                        
+            div.style.background = 'black';
+        })
+
+        div.addEventListener('mousedown',  (e) => {   
+            e.preventDefault(); // prevent dragging on mousedown
+            div.style.background = 'black';
+        })   
+    })
+}
 
 squareDiv.forEach((div) => {                            
     div.addEventListener('mouseover',  (e) => {
