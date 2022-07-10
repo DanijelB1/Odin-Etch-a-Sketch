@@ -11,23 +11,26 @@ function update() {
 }
 
 slider.addEventListener('input', update);
+
 // create a grid with selected slider value when mouse lifts off and reset square colour
 slider.addEventListener('change', () => {
     colourRemove();
     gridCreate(slider.value);
 })
 update()
+
 function gridCreate(squaresNumber) {
     for (let i = 0; i < Math.pow(squaresNumber,2); i++) {
         const newDiv = document.createElement('div');
         container.appendChild(newDiv);
         newDiv.classList.add('square');
     }
+    colour();
+    // change the number of grid columns and rows to number of squares
     container.style.gridTemplateRows = 'repeat' + '(' + `${squaresNumber}` + ',' +  '1fr'+ ')';
     container.style.gridTemplateColumns = 'repeat' + '(' + `${squaresNumber}` + ',' +  '1fr'+ ')';
   }
 
-gridCreate(16);
 
 // change colour of square to black when left mouse is held down and dragged
 function colour() {
@@ -61,6 +64,14 @@ squareDiv.forEach((div) => {
             div.style.background = "#" + randomColour;
     })   
 })
+}
+
+// reset colour of squares to white
+function colourRemove() {
+    const squareDiv = document.querySelectorAll('.square');
+    squareDiv.forEach((div) => {   
+        div.style.background = 'white';
+    })
 }
 
 
