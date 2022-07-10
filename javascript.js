@@ -1,5 +1,16 @@
 const container = document.querySelector('.container');
 
+// grid size slider
+const slider = document.querySelector('.slider');
+const output = document.querySelector('.square-number');
+output.innerHTML = slider.value
+
+// change the number underneath the slider
+function update() {
+    output.innerHTML = slider.value
+}
+
+slider.addEventListener('input', update);
 function gridCreate(squaresNumber) {
     for (let i = 0; i < Math.pow(squaresNumber,2); i++) {
         const newDiv = document.createElement('div');
