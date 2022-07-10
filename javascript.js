@@ -45,16 +45,23 @@ const squareDiv = document.querySelectorAll('.square');
     })
 }
 
+// change colour of square to random hex value
+function colourRandom() {
+    const squareDiv = document.querySelectorAll('.square');
 squareDiv.forEach((div) => {                            
     div.addEventListener('mouseover',  (e) => {
-        if (e.buttons != 1) return; //  stops function if 'mouse 1' (left button) is not clicked                        
-        div.style.background = 'blue';
+            if (e.buttons != 1) return; //  stop function if 'mouse 1' (left button) is not clicked                        
+            let randomColour = Math.floor(Math.random()*16777215).toString(16);
+            div.style.background = "#" + randomColour;
     })
    
     div.addEventListener('mousedown',  (e) => {   
-        e.preventDefault(); // prevents dragging on mousedown
-        div.style.background = 'blue';
+            e.preventDefault(); // prevent dragging on mousedown
+            let randomColour = Math.floor(Math.random()*16777215).toString(16);
+            div.style.background = "#" + randomColour;
     })   
 })
+}
+
 
 
