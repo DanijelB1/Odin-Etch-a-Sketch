@@ -90,7 +90,12 @@ function colourRemove() {
     })
 }
 
+// reset button
+const resetButton = document.querySelector('.reset-button')
 
+resetButton.addEventListener('click', () => {
+    colourRemove();
+})
 
 // black colour button
 const blackColourButton = document.querySelector('.default-colour');
