@@ -66,6 +66,22 @@ squareDiv.forEach((div) => {
 })
 }
 
+// change colour of square to white when mouse is held and dragged (used as eraser)
+function eraser() {
+    const squareDiv = document.querySelectorAll('.square');
+    squareDiv.forEach((div) => {                            
+        div.addEventListener('mouseover',  (e) => {
+            if (e.buttons != 1) return; //  stop function if 'mouse 1' (left button) is not clicked                        
+            div.style.background = 'white';
+        })
+        
+        div.addEventListener('mousedown',  (e) => {   
+            e.preventDefault(); // prevent dragging on mousedown
+            div.style.background = 'white';
+        })   
+    })
+}
+
 // reset colour of squares to white
 function colourRemove() {
     const squareDiv = document.querySelectorAll('.square');
