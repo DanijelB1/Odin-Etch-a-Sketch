@@ -113,3 +113,16 @@ blackColourButton.addEventListener('click', () => {
 blackColourButton.style.fontWeight = 'bold';
 blackColourButton.style.fontSize = '17px';
 
+// RGB-button
+const rgbButton = document.querySelector('.random-colour');
+
+rgbButton.addEventListener('click', () => {
+    colourRandom();
+    rgbButton.style.fontWeight = 'bold';
+    rgbButton.style.fontSize = '17px';
+    blackColourButton.style.fontWeight = '';
+    blackColourButton.style.fontSize = '';
+    eraserButton.style.fontWeight = '';
+    eraserButton.style.fontSize = '';
+})
+
