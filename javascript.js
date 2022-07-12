@@ -92,3 +92,19 @@ function colourRemove() {
 
 
 
+// black colour button
+const blackColourButton = document.querySelector('.default-colour');
+
+blackColourButton.addEventListener('click', () => {
+    colour();
+    blackColourButton.style.fontWeight = 'bold';
+    blackColourButton.style.fontSize = '17px';
+    rgbButton.style.fontWeight = '';
+    rgbButton.style.fontSize = '';
+    eraserButton.style.fontWeight = '';
+    eraserButton.style.fontSize = '';
+})
+
+blackColourButton.style.fontWeight = 'bold';
+blackColourButton.style.fontSize = '17px';
+
