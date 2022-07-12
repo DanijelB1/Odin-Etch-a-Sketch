@@ -1,12 +1,41 @@
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    text-align: center;
+    background-color: #ededed;
+}
+
 .square {
-    height: 50px;
-    aspect-ratio: 1 / 1 ;
-    border: blue solid 1px;
-    margin: 1px;
+    aspect-ratio: 1 / 1;
+    border-top: #301810 solid 1px;
+    border-left: #301810 solid 1px;
+    margin: 0px;
+    background-color: white;
 }
 
 .container {
     display: grid;
+    border: #301810 solid 5px;
+    height: 400px;
+    max-height: 500px;
+    min-width: 400px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    grid-gap: 0ch;
+}
+
+.user-interface {
+    display: flex;
+    gap: 100px;
+    background-color: #bdbdbd;
+    margin-left: 8em;
+    margin-right: 8em;
+    padding: 30px;
+    border-radius: 50px;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
